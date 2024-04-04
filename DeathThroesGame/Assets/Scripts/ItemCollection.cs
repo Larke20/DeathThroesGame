@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ItemCollection : MonoBehaviour
 {
+    public EssenceManager em;
     //TODO: Add a collection system, like a mana bar that increases as the player collects essence
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D essence)
     {
-        if(collision.CompareTag("Player"))
+        if(essence.gameObject.CompareTag("SoulEssence"))
         {
-            Destroy(gameObject); //remove soul essence upon collision
+            Destroy(essence.gameObject); //remove soul essence upon collision
+            em.AddEssence(1);
         }
     }
 
