@@ -14,7 +14,7 @@ public class playermovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
-
+    //start of this attack stuff
     private void Attack(){
 
         anim.SetBool("attack", true);
@@ -25,6 +25,7 @@ public class playermovement : MonoBehaviour
         anim.SetBool("attack", false);
         anim.SetTrigger("finishAttack");
     }
+    //end of this attack stuff
     private void Update()
     {
         //l,r,u,d movement
@@ -41,8 +42,8 @@ public class playermovement : MonoBehaviour
         else if(moveInput.x < -0.01f){
             transform.localScale = new Vector3(-0.18f,0.20f,1);
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        //attack activation
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Attack();
         }
