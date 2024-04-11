@@ -3,7 +3,7 @@
 </p>
   
 <p align="center">
-You awaken in an unfamiliarly familiar place ... wait that doesnt sound right ... because this place is your HOMELAND but has been reduced to ruins and now its up to you to find the survivors and fight back
+You awaken in an unfamiliarly familiar place ... wait that doesnt sound right ... because this place is your HOMELAND but has been reduced to ruins and now its up to you to fight back
 </p>
   
 
