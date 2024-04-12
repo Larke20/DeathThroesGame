@@ -3,12 +3,12 @@
 </p>
   
 <p align="center">
-You awaken in an unfamiliarly familiar place ... wait that doesnt sound right ... because this place is your HOMELAND but has been reduced to ruins and now its up to you to fight back
+You awaken in an unfamiliarly place ... wait that doesnt sound right ... because this place is your HOME but has been reduced to ruins and now its up to you to fight back
 </p>
   
 
 <p align="center">
-You'll explore caves and encounter enemies on your path to vengeance but they get stronger the shorter your path becomes. You too must improve your skills which you can through soul essence drops and stat upgrades.
+You'll explore dungeons and encounter enemies on your path to vengeance but they get stronger the shorter your path becomes. You too must improve your skills which you can through soul essence drops and stat upgrades.
 </p>
 
 
