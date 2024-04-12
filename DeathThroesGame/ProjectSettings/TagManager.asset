@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Door
   - SoulEssence
+  - Soul
+  - Soul Essence
+  - EnemyEye
   layers:
   - Default
   - TransparentFX
