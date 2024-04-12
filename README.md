@@ -3,7 +3,7 @@
 </p>
   
 <p align="center">
-You awaken in an unfamiliarly place ... wait that doesnt sound right ... because this place is your HOME but has been reduced to ruins and now its up to you to fight back
+You awaken in an unfamiliar place ... wait that doesnt sound right ... because this place is your HOME but has been reduced to ruins and now its up to you to fight back
 </p>
   
 
