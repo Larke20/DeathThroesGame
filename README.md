@@ -19,5 +19,5 @@ DO YOU HAVE WHAT IT TAKES?
    
 
 <p align="center">
-  <img width="460" height="300" src="[https://github.com/Larke20/DeathThroesGame/assets/67767603/14a4f76e-3ab9-4107-a179-49c6c4308165](https://github.com/Larke20/DeathThroesGame/blob/main/gamelogoV1large.png?raw=true)">
+  <img width="460" height="300" src="https://github.com/Larke20/DeathThroesGame/blob/main/gamelogoV1large.png?raw=true">
 </p>
