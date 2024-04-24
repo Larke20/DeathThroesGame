@@ -20,6 +20,10 @@ public class PlayerHealth : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.G))
         {
             TakeDamage(20);
+            if(currentHealth <= 0)
+            {
+                Dead();
+            }
         }
         
     }
@@ -27,5 +31,10 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+    }
+    private void Dead()
+    {
+        Debug.Log("I am Dead!");
+        Destroy(gameObject);
     }
 }

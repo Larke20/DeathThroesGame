@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this script is for enemy health btw, the player has its own
 public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
+    [SerializeField] FloatingHealthBar healthBar;
+    Rigidbody2D rb;
 
     private int MAX_HEALTH = 100;
 
-    // Update is called once per frame
-    void Update()
+    
+    private void Awake()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        healthBar = GetComponentInChildren<FloatingHealthBar>();
+    }
+    private void Start()
+    {
+        healthBar.UpdateHealthBar(health, MAX_HEALTH);
     }
     public void Damage(int amount)
     {
@@ -20,6 +27,7 @@ public class Health : MonoBehaviour
             throw new System.ArgumentOutOfRangeException("Cannot have negative damage.");
         }
         this.health -= amount;
+        healthBar.UpdateHealthBar(health, MAX_HEALTH);
         if(health <= 0)
         {
             Dead();

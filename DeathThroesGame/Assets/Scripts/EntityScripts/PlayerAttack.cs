@@ -8,25 +8,33 @@ public class PlayerAttack : MonoBehaviour
 
     private GameObject attackArea = default;
     private bool attacking = false;
-    private float timeToAttack = 0.25f;
+    private float timeToAttack = 0.5f;
     private float timer = 0f;
+    private float cooldownTime = 0.25f; // attack cool down to stop spam
+    private float cooldownTimer = 0f; // attack cooldown related
+    private float delay = 0.3f; //attack dmg/sync purposes
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         attackArea = transform.GetChild(0).gameObject;
+        attackArea.SetActive(false); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        cooldownTimer += Time.deltaTime;
+        if(Input.GetKeyDown(KeyCode.Mouse0) && cooldownTimer >= cooldownTime)
         {
+            Debug.Log("attack initiated");
             Attack();
+            cooldownTimer = 0f;
         }
         if(attacking)
         {
             timer += Time.deltaTime;
+            Debug.Log($"attack timer: {timer}");
             if(timer >= timeToAttack)
             {
                 timer = 0;
@@ -40,7 +48,16 @@ public class PlayerAttack : MonoBehaviour
     {
         anim.SetBool("attack", true);
         attacking = true;
-        attackArea.SetActive(attacking);
+        StartCoroutine(SyncDamageWithAttack()); //coroutine to sync dmg applied with attack
+    }
+    private IEnumerator SyncDamageWithAttack()
+    {
+        yield return new WaitForSeconds(delay);
+        attackArea.SetActive(true);
+        
+        yield return new WaitForSeconds(timeToAttack - delay);
+        attackArea.SetActive(false);
+        FinishAttack();
     }
     private void FinishAttack()
     {
