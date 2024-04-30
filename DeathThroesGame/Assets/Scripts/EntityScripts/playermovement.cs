@@ -1,5 +1,6 @@
 
 using UnityEngine;
+using System.Collections;
 
 public class playermovement : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class playermovement : MonoBehaviour
     [SerializeField]private float speed;
     //animator related 
     private Animator anim;
+
+    private bool isDashing = false;
+    public float dashSpeed = .02f;
+    public float dashDuration = 0.0000005f;
 
 
     private void Awake()
@@ -39,6 +44,28 @@ public class playermovement : MonoBehaviour
         //animation
         bool isMoving = moveInput.magnitude > 0.01f;
         anim.SetBool("run", isMoving);
+
+        //input for dash will be LShift for now
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
+        {
+            StartCoroutine(Dash());
+        }
+
+        // Player movement
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Vector3 movement = new Vector3(horizontalInput, verticalInput, 0f);
+        transform.position += movement * (isDashing ? dashSpeed : speed) * Time.deltaTime;
         
+    }
+    IEnumerator Dash()
+    {
+        isDashing = true;
+        float originalSpeed = speed;
+        speed = dashSpeed; // Increase speed during dash
+        yield return new WaitForSeconds(dashDuration);
+        speed = originalSpeed; // Reset speed to normal
+        isDashing = false;
     }
 }
