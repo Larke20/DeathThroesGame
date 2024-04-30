@@ -12,8 +12,8 @@ public class playermovement : MonoBehaviour
     private Animator anim;
 
     private bool isDashing = false;
-    public float dashSpeed = .02f;
-    public float dashDuration = 0.0000005f;
+    private float dashSpeed = 4f;
+    private float dashDuration = .1f;
 
 
     private void Awake()
