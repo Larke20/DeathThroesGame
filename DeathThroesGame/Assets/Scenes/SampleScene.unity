@@ -297,7 +297,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -728.0558, y: 339.948}
+  m_AnchoredPosition: {x: -728.0558, y: 454}
   m_SizeDelta: {x: 426.7084, y: 51.9753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292116440
@@ -93488,6 +93488,8 @@ GameObject:
   - component: {fileID: 1840684109}
   - component: {fileID: 1840684111}
   - component: {fileID: 1840684110}
+  - component: {fileID: 1840684112}
+  - component: {fileID: 1840684113}
   m_Layer: 0
   m_Name: Door1
   m_TagString: Door
@@ -93743,6 +93745,55 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1840684112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840684108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c34583ce74c48c8bdb27097f1d40c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: FirstDungeon
+--- !u!19719996 &1840684113
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840684108}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1 &1902176439
 GameObject:
   m_ObjectHideFlags: 0
@@ -94083,7 +94134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3055806094328774557, guid: 5243816a4182247739cdd1715696fcc4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 339.948
+      value: 454
       objectReference: {fileID: 0}
     - target: {fileID: 3274869351021355415, guid: 5243816a4182247739cdd1715696fcc4, type: 3}
       propertyPath: m_SizeDelta.x
@@ -94095,7 +94146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3274869351021355415, guid: 5243816a4182247739cdd1715696fcc4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 260.0537
+      value: 375
       objectReference: {fileID: 0}
     - target: {fileID: 5508305337722964694, guid: 5243816a4182247739cdd1715696fcc4, type: 3}
       propertyPath: m_Pivot.x
@@ -94191,7 +94242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7330055207865694621, guid: 5243816a4182247739cdd1715696fcc4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 258.3698
+      value: 374
       objectReference: {fileID: 0}
     - target: {fileID: 8319349968421855768, guid: 5243816a4182247739cdd1715696fcc4, type: 3}
       propertyPath: m_AnchorMax.x
@@ -94214,6 +94265,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1679614075324914406, guid: 895c320cb09ea4946b4c45c3c6673581, type: 3}
+      propertyPath: speed
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 2360865789393229400, guid: 895c320cb09ea4946b4c45c3c6673581, type: 3}
       propertyPath: m_Size.y
       value: 0.7627281
@@ -94466,7 +94521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -738.3698, y: 258.3698}
+  m_AnchoredPosition: {x: -738.3698, y: 374}
   m_SizeDelta: {x: 423.26, y: 46.7396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &8461076286090216481 stripped
@@ -94490,7 +94545,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -750, y: 260.0537}
+  m_AnchoredPosition: {x: -750, y: 375}
   m_SizeDelta: {x: 348.529, y: 22.1075}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8731880536457687480

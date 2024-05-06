@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
     private Animator anim;
+    ControllerInput controls; //controller support stuff
+
 
     private GameObject attackArea = default;
     private bool attacking = false;
@@ -13,6 +16,12 @@ public class PlayerAttack : MonoBehaviour
     private float cooldownTime = 0.25f; // attack cool down to stop spam
     private float cooldownTimer = 0f; // attack cooldown related
     private float delay = 0.3f; //attack dmg/sync purposes
+    void Awake()
+    {
+        //controller support stuff
+        controls = new ControllerInput();
+        controls.Gameplay.Attack.performed += contextA => Attack(); 
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -63,5 +72,13 @@ public class PlayerAttack : MonoBehaviour
     {
         anim.SetBool("attack", false);
         anim.SetTrigger("finishAttack");
+    }
+    void OnEnable()
+    {
+        controls.Gameplay.Enable();
+    }
+    void OnDisable()
+    {
+        controls.Gameplay.Disable();
     }
 }
