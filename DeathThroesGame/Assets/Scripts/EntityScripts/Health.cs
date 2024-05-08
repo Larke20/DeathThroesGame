@@ -51,6 +51,7 @@ public class Health : MonoBehaviour
     }
     private void Dead()
     {
+        GetComponent<LootBag>().InstantiateLoot(transform.position);
         Debug.Log("I am Dead!");
         Destroy(gameObject);
     }
