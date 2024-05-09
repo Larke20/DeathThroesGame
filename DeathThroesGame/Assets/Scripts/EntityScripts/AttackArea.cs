@@ -13,6 +13,11 @@ public class AttackArea : MonoBehaviour
             Health health = collider.GetComponent<Health>();
             health.Damage(damage);
         }
+        if(collider.GetComponent<BossHealth>() != null)
+        {
+            BossHealth bossHealth = collider.GetComponent<BossHealth>();
+            bossHealth.BossTakeDamage(damage);
+        }
     }
 
    

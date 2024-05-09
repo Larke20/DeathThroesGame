@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-    public int bossHealth = 100;
-    public int bossCurrentHealth;
+    [SerializeField]private int bossHealth = 100;
     
-    public Animator anim;
+    private Animator anim;
 
     void start()
     {
-        bossCurrentHealth = bossHealth;
+        
     }
 
     public void BossTakeDamage(int amount)
     {
-        bossCurrentHealth -= amount;
+        this.bossHealth -= amount;
 
-        if(bossCurrentHealth <= 0)
+        if(bossHealth <= 0)
         {
-            anim.SetBool("IsDead", true);
+            //anim.SetBool("IsDead", true);
+            Destroy(gameObject);
+            
         }
     }
 }
