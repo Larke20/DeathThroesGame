@@ -14,4 +14,6 @@ public class AttackArea : MonoBehaviour
             health.Damage(damage);
         }
     }
+
+   
 }
