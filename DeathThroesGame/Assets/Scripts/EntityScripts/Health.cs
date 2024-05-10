@@ -32,7 +32,8 @@ public class Health : MonoBehaviour
         healthBar.UpdateHealthBar(health, MAX_HEALTH);
         if(health <= 0)
         {
-            Dead();
+            playAnimation();
+            Invoke(nameof(Dead), 0.5f); 
         }
     }
     public void Heal(int amount)
@@ -56,5 +57,10 @@ public class Health : MonoBehaviour
         GetComponent<LootBag>().InstantiateLoot(transform.position);
         Debug.Log("I am Dead!");
         Destroy(gameObject);
+    }
+    void playAnimation()
+    {
+        anim.SetTrigger("isDead");
+        Debug.Log("deadanimation");
     }
 }
