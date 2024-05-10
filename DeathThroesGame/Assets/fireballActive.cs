@@ -27,11 +27,7 @@ public class fireballActive : MonoBehaviour
             BossHealth bossHealth = collider.GetComponent<BossHealth>();
             bossHealth.BossTakeDamage(damage);
         }
-        timer += Time.deltaTime;
-        if(timer > 1)
-        {
-            Destroy(gameObject);
-        }
+
     }
     
 
@@ -39,6 +35,10 @@ public class fireballActive : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+        if(timer > .5)
+        {
+            Destroy(gameObject);
+        }
     }
 }
