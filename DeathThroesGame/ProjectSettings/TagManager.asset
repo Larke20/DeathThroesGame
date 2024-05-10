@@ -10,6 +10,7 @@ TagManager:
   - Soul Essence
   - EnemyEye
   - Cave1
+  - Spellbook
   layers:
   - Default
   - TransparentFX

@@ -36,9 +36,11 @@ public class playermovement : MonoBehaviour
         //l,r flip
         if(moveInput.x > 0.01f){
             transform.localScale = new Vector3(0.18f, 0.20f, 1);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else if(moveInput.x < -0.01f){
-            transform.localScale = new Vector3(-0.18f,0.20f,1);
+            //transform.localScale = new Vector3(-0.18f,0.20f,1);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
         //animation
@@ -57,6 +59,10 @@ public class playermovement : MonoBehaviour
 
         Vector3 movement = new Vector3(horizontalInput, verticalInput, 0f);
         transform.position += movement * (isDashing ? dashSpeed : speed) * Time.deltaTime;
+
+
+
+
         
     }
     IEnumerator Dash()
