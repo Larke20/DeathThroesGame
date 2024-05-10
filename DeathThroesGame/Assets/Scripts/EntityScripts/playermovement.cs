@@ -10,11 +10,13 @@ public class playermovement : MonoBehaviour
     [SerializeField]private float speed;
     //animator related 
     private Animator anim;
+    public bool canDash;
 
     private bool isDashing = false;
-    private float dashSpeed = 4f;
-    private float dashDuration = .1f;
-
+    public float dashSpeed = 2f;
+    public float dashDuration = .02f;
+    public float dashCooldown = 3f;
+    private float timeStamp;
 
     private void Awake()
     {
@@ -48,9 +50,14 @@ public class playermovement : MonoBehaviour
         anim.SetBool("run", isMoving);
 
         //input for dash will be LShift for now
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
+        if(canDash){
+        if ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift) ) && !isDashing)
         {
+
+            isDashing = true;
             StartCoroutine(Dash());
+
+        }
         }
 
         // Player movement
@@ -67,11 +74,17 @@ public class playermovement : MonoBehaviour
     }
     IEnumerator Dash()
     {
+        canDash = false;
         isDashing = true;
         float originalSpeed = speed;
         speed = dashSpeed; // Increase speed during dash
         yield return new WaitForSeconds(dashDuration);
         speed = originalSpeed; // Reset speed to normal
         isDashing = false;
+
+        yield return new WaitForSeconds(dashDuration + 2);
+        canDash = true;
     }
+
+
 }
