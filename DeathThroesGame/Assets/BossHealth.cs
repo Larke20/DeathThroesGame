@@ -7,7 +7,10 @@ public class BossHealth : MonoBehaviour
     [SerializeField]private int bossHealth = 100;
     public float destroyDelay = 2f;
     
+    
     private Animator anim;
+    public GameManagerScript gameManager;
+    private bool bossIsDead;
 
     private void Start()
     {
@@ -18,10 +21,14 @@ public class BossHealth : MonoBehaviour
     {
         this.bossHealth -= amount;
 
-        if(bossHealth <= 0)
+        if(bossHealth <= 0 && !bossIsDead)
         {
+            
+            bossIsDead = true;
             anim.SetBool("IsDead", true);
             StartCoroutine(DestroyAfterDelay());
+            
+            gameManager.gameWin();
             //Destroy(gameObject);
             
         }
@@ -34,4 +41,5 @@ public class BossHealth : MonoBehaviour
         // Destroy the GameObject
         Destroy(gameObject);
     }
+    
 }
