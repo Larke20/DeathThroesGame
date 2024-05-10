@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbaf6e0971fab449884c111538d379f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  droppedItemPrefab: {fileID: 9140666695118676987, guid: 2c251c6bf6dfe4c33950eb16eaa2ae6a, type: 3}
+  droppedItemPrefab: {fileID: 2772852601547351271, guid: 3c0acdc2790394802a1208e8c03b4063, type: 3}
   lootList:
   - {fileID: 11400000, guid: df18a87de8b6942aa948a3040921436e, type: 2}
 --- !u!114 &3597887627168528094
@@ -547,7 +547,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
