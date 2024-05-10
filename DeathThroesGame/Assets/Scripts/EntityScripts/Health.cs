@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
     [SerializeField] FloatingHealthBar healthBar;
+    private Animator anim;
     Rigidbody2D rb;
 
     private int MAX_HEALTH = 100;
@@ -14,6 +15,7 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         healthBar = GetComponentInChildren<FloatingHealthBar>();
     }
     private void Start()
