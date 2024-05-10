@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
     [SerializeField] FloatingHealthBar healthBar;
+    private Animator anim;
     Rigidbody2D rb;
 
     private int MAX_HEALTH = 100;
@@ -14,6 +15,7 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         healthBar = GetComponentInChildren<FloatingHealthBar>();
     }
     private void Start()
@@ -30,7 +32,8 @@ public class Health : MonoBehaviour
         healthBar.UpdateHealthBar(health, MAX_HEALTH);
         if(health <= 0)
         {
-            Dead();
+            playAnimation();
+            Invoke(nameof(Dead), 0.5f); 
         }
     }
     public void Heal(int amount)
@@ -54,5 +57,10 @@ public class Health : MonoBehaviour
         GetComponent<LootBag>().InstantiateLoot(transform.position);
         Debug.Log("I am Dead!");
         Destroy(gameObject);
+    }
+    void playAnimation()
+    {
+        anim.SetTrigger("isDead");
+        Debug.Log("deadanimation");
     }
 }
