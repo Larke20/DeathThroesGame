@@ -29,7 +29,6 @@ public class fireballActive : MonoBehaviour
         }
 
     }
-    
 
 
     // Update is called once per frame
@@ -40,5 +39,20 @@ public class fireballActive : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            if(GetComponent<Collider>().GetComponent<Health>() != null)
+            {
+                Health health = other.GetComponent<Health>();
+                health.Damage(damage);
+                Destroy(gameObject);
+            }
+            if(GetComponent<Collider>().GetComponent<BossHealth>() != null)
+            {
+            BossHealth bossHealth = GetComponent<Collider>().GetComponent<BossHealth>();
+            bossHealth.BossTakeDamage(damage);
+            }
+        }
+
     }
 }
