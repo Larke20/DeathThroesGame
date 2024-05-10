@@ -331,12 +331,12 @@ GameObject:
   - component: {fileID: 5499218515068818883}
   - component: {fileID: 7763687575629375743}
   - component: {fileID: 7086279154867825415}
-  - component: {fileID: 2866426285303338195}
   - component: {fileID: 2376267852812294862}
   - component: {fileID: 4003960818885836567}
   - component: {fileID: 3597887627168528094}
   - component: {fileID: 8553548609003611094}
   - component: {fileID: 4140917313341917512}
+  - component: {fileID: 3963401460496718562}
   m_Layer: 0
   m_Name: EnemyEye
   m_TagString: EnemyEye
@@ -434,51 +434,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &2866426285303338195
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5775812892791797903}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.026233733, y: -0.019529983}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
-    newSize: {x: 1.5, y: 1.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.40382683, y: 0.28162614}
-  m_EdgeRadius: 0
 --- !u!50 &2376267852812294862
 Rigidbody2D:
   serializedVersion: 4
@@ -563,6 +518,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2921890978968938235, guid: 54baef95cd45d42b48385bb1a78fdbea, type: 3}
   bulletPos: {fileID: 1935383027607954671}
+--- !u!60 &3963401460496718562
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5775812892791797903}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5, y: 1.5}
+    newSize: {x: 1.5, y: 1.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.25, y: 0.14}
+      - {x: 0.24, y: 0.16}
+      - {x: 0.17999999, y: 0.16}
+      - {x: 0.017854638, y: 0.08141855}
+      - {x: -0.04214536, y: 0.13927302}
+      - {x: -0.1028567, y: 0.12238891}
+      - {x: -0.14, y: 0.16}
+      - {x: -0.19785464, y: 0.09425566}
+      - {x: -0.19999999, y: -0.01}
+      - {x: -0.14570928, y: -0.064982474}
+      - {x: -0.07858154, y: -0.023493625}
+      - {x: -0.018072922, y: -0.13369675}
+      - {x: -0.03, y: -0.16854638}
+      - {x: 0.06494733, y: -0.21145362}
+      - {x: 0.08410508, y: -0.14173716}
+      - {x: 0.14785464, y: -0.13996495}
+      - {x: 0.16069171, y: -0.11}
+      - {x: 0.13781954, y: -0.02785464}
+      - {x: 0.1582952, y: 0.020510804}
+      - {x: 0.25, y: 0.049999997}
+  m_UseDelaunayMesh: 0
 --- !u!1 &5966040200189252026
 GameObject:
   m_ObjectHideFlags: 0

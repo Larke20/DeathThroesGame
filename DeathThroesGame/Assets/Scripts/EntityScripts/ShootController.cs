@@ -11,7 +11,7 @@ public class ShootController : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && canShoot)
         {
             Instantiate(fireball, shootingPoint.position, transform.rotation);
         }
