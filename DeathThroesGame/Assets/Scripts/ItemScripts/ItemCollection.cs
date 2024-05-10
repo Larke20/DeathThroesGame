@@ -14,6 +14,7 @@ public class ItemCollection : MonoBehaviour
             Destroy(collectable.gameObject); //remove soul essence upon collision
             em.AddEssence(1);
         }
+        /**
         if (collectable.gameObject.CompareTag("Spellbook"))
         {
             // Update canShoot variable in ShootController to true
@@ -25,6 +26,7 @@ public class ItemCollection : MonoBehaviour
             }
 
         }
+        */
     }
 
 }
