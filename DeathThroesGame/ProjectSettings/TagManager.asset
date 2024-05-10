@@ -11,6 +11,9 @@ TagManager:
   - EnemyEye
   - Cave1
   - Spellbook
+  - Boss
+  - Great
+  - BossEye
   layers:
   - Default
   - TransparentFX
